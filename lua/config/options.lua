@@ -19,14 +19,5 @@ vim.g.lazyvim_python_ruff = "ruff"
 --   -- Add more languages as needed
 -- }
 
-local opt = vim.opt
-
--- Tabs & Indentation
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.tabstop = 4
-opt.expandtab = true
-opt.autoindent = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
