@@ -10,104 +10,118 @@ return {
     local set = vim.keymap.set
     require("which-key").add({
 
-      -- Add or skip cursor above/below the main cursor.
+      -- Add or skip cursor above/below the main cursor
       {
         "<A-up>",
-        function()
-          mc.lineAddCursor(-1)
-        end,
-        desc = "Add cursor above",
+        "<cmd>mc.lineAddCursor(-1)<cr>",
         mode = { "n", "x" },
+        desc = "Add cursor above",
         icon = "󰞙",
       },
       {
         "<A-down>",
-        function()
-          mc.lineAddCursor(1)
-        end,
-        desc = "Add cursor below",
+        "<cmd>mc.lineAddCursor(1)<cr>",
         mode = { "n", "x" },
+        desc = "Add cursor below",
         icon = "󰞖",
       },
       {
         "<A-S-up>",
-        function()
-          mc.lineSkipCursor(-1)
-        end,
-        desc = "Skip adding cursor above",
+        "<cmd>mc.lineSkipCursor(-1)<cr>",
         mode = { "n", "x" },
+        desc = "Skip adding cursor above",
         icon = "󰄿",
       },
       {
         "<A-S-down>",
-        function()
-          mc.lineSkipCursor(1)
-        end,
-        desc = "Skip adding cursor below",
+        "<cmd>mc.lineSkipCursor(1)<cr>",
         mode = { "n", "x" },
+        desc = "Skip adding cursor below",
         icon = "󰄼",
       },
 
       -- Add or skip adding a new cursor by matching word/selection
       {
         "<A-left>",
-        function()
-          mc.mathAddCursor(1)
-        end,
-        desc = "Add cursor at next match",
+        "<cmd>mc.mathAddCursor(1)<cr>",
         mode = { "n", "x" },
+        desc = "Add cursor at next match",
         icon = "󰒭",
       },
       {
         "<A-right>",
-        function()
-          mc.mathAddCursor(-1)
-        end,
-        desc = "Add cursor at previous match",
+        "<cmd>mc.mathAddCursor(-1)<cr>",
         mode = { "n", "x" },
+        desc = "Add cursor at previous match",
         icon = "󰒮",
       },
       {
         "<A-S-right>",
-        function()
-          mc.mathSkipCursor(1)
-        end,
-        desc = "Skip next match",
+        "<cmd>mc.mathSkipCursor(1)<cr>",
         mode = { "n", "x" },
+        desc = "Skip next match",
         icon = "󰔰",
       },
       {
         "<A-S-left>",
-        function()
-          mc.mathSkipCursor(-1)
-        end,
-        desc = "Skip previous match",
+        "<cmd>mc.mathSkipCursor(-1)<cr>",
         mode = { "n", "x" },
+        desc = "Skip previous match",
         icon = "󰶢",
       },
       -- Disable and enable cursors.
       {
         "<C-q>",
         mc.toggleCursor,
-        desc = "Toggle multicursor mode",
         mode = { "n", "x" },
+        desc = "Toggle multicursor mode",
         icon = "",
       },
     })
     -- Add and remove cursors with control + left click.
-    set("n", "<c-leftmouse>", mc.handleMouse, { desc = "Add cursor at mouse click" })
-    set("n", "<c-leftdrag>", mc.handleMouseDrag, { desc = "Add cursors with mouse drag" })
-    set("n", "<c-leftrelease>", mc.handleMouseRelease, { desc = "Finish mouse cursor selection" })
+    set(
+      "n",
+      "<c-leftmouse>",
+      mc.handleMouse,
+      { desc = "Add cursor at mouse click" }
+    )
+    set(
+      "n",
+      "<c-leftdrag>",
+      mc.handleMouseDrag,
+      { desc = "Add cursors with mouse drag" }
+    )
+    set(
+      "n",
+      "<c-leftrelease>",
+      mc.handleMouseRelease,
+      { desc = "Finish mouse cursor selection" }
+    )
 
     -- Mappings defined in a keymap layer only apply when there are
     -- multiple cursors. This lets you have overlapping mappings.
     mc.addKeymapLayer(function(layerSet)
       -- Select a different cursor as the main one.
-      layerSet({ "n", "x" }, "<left>", mc.prevCursor, { desc = "Select previous cursor" })
-      layerSet({ "n", "x" }, "<right>", mc.nextCursor, { desc = "Select next cursor" })
+      layerSet(
+        { "n", "x" },
+        "<left>",
+        mc.prevCursor,
+        { desc = "Select previous cursor" }
+      )
+      layerSet(
+        { "n", "x" },
+        "<right>",
+        mc.nextCursor,
+        { desc = "Select next cursor" }
+      )
 
       -- Delete the main cursor.
-      layerSet({ "n", "x" }, "<leader>x", mc.deleteCursor, { desc = "Delete current cursor" })
+      layerSet(
+        { "n", "x" },
+        "<leader>x",
+        mc.deleteCursor,
+        { desc = "Delete current cursor" }
+      )
 
       -- Enable and clear cursors using escape.
       layerSet("n", "<esc>", function()
