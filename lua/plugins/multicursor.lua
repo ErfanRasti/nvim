@@ -13,28 +13,36 @@ return {
       -- Add or skip cursor above/below the main cursor
       {
         "<A-up>",
-        "<cmd>mc.lineAddCursor(-1)<cr>",
+        function()
+          mc.lineAddCursor(-1)
+        end,
         mode = { "n", "x" },
         desc = "Add cursor above",
         icon = "󰞙",
       },
       {
         "<A-down>",
-        "<cmd>mc.lineAddCursor(1)<cr>",
+        function()
+          mc.lineAddCursor(1)
+        end,
         mode = { "n", "x" },
         desc = "Add cursor below",
         icon = "󰞖",
       },
       {
         "<A-S-up>",
-        "<cmd>mc.lineSkipCursor(-1)<cr>",
+        function()
+          mc.lineSkipCursor(-1)
+        end,
         mode = { "n", "x" },
         desc = "Skip adding cursor above",
         icon = "󰄿",
       },
       {
         "<A-S-down>",
-        "<cmd>mc.lineSkipCursor(1)<cr>",
+        function()
+          mc.lineSkipCursor(1)
+        end,
         mode = { "n", "x" },
         desc = "Skip adding cursor below",
         icon = "󰄼",
@@ -43,28 +51,36 @@ return {
       -- Add or skip adding a new cursor by matching word/selection
       {
         "<A-left>",
-        "<cmd>mc.mathAddCursor(1)<cr>",
+        function()
+          mc.mathAddCursor(1)
+        end,
         mode = { "n", "x" },
         desc = "Add cursor at next match",
         icon = "󰒭",
       },
       {
         "<A-right>",
-        "<cmd>mc.mathAddCursor(-1)<cr>",
+        function()
+          mc.mathAddCursor(-1)
+        end,
         mode = { "n", "x" },
         desc = "Add cursor at previous match",
         icon = "󰒮",
       },
       {
         "<A-S-right>",
-        "<cmd>mc.mathSkipCursor(1)<cr>",
+        function()
+          mc.mathSkipCursor(1)
+        end,
         mode = { "n", "x" },
         desc = "Skip next match",
         icon = "󰔰",
       },
       {
         "<A-S-left>",
-        "<cmd>mc.mathSkipCursor(-1)<cr>",
+        function()
+          mc.mathSkipCursor(-1)
+        end,
         mode = { "n", "x" },
         desc = "Skip previous match",
         icon = "󰶢",
