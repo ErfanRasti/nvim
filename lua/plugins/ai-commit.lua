@@ -14,7 +14,7 @@ return {
     })
     require("which-key").add({
       {
-        "<leader>gc",
+        "<leader>gC",
         "<cmd>AICommit<cr>",
         mode = "n",
         desc = "Commit using AI",
