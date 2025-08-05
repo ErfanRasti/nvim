@@ -10,8 +10,24 @@ return {
       -- or leave it empty to use the default settings
     },
 
-    -- show hidden files and ignored files on explorer
-    picker = { hidden = true, ignored = true },
+    -- show hidden files and ignored files on explorer and picker
+    picker = {
+
+     -- Activates configurations for snacks explorer
+      hidden = true,
+      ignored = true,
+      --
+      sources = {
+        -- Activates configurations for picker
+        files = {
+          -- Set 'hidden' to true to show hidden files by default
+          hidden = true,
+          -- Set 'ignored' to true to show gitignore files
+          ignored = true,
+        },
+      },
+    },
+    explorer = { hidden = true, ignored = true },
 
     -- setup dashboard
     dashboard = {
