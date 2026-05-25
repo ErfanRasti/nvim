@@ -13,7 +13,7 @@ return {
     -- show hidden files and ignored files on explorer and picker
     picker = {
 
-     -- Activates configurations for snacks explorer
+      -- Activates configurations for snacks explorer
       hidden = true,
       ignored = true,
       --
@@ -31,9 +31,26 @@ return {
 
     -- setup dashboard
     dashboard = {
-      width = 65,
-      preset = {
-        header = [[
+      width = 70,
+      --       preset = {
+      --         header = [[
+      --                                              
+      --       ████ ██████           █████      ██
+      --      ███████████             █████ 
+      --      █████████ ███████████████████ ███   ███████████
+      --     █████████  ███    █████████████ █████ ██████████████
+      --    █████████ ██████████ █████████ █████ █████ ████ █████
+      --  ███████████ ███    ███ █████████ █████ █████ ████ █████
+      -- ██████  █████████████████████ ████ █████ █████ ████ ██████
+      --         ]],
+      --       },
+      -- example = "advanced",
+      sections = {
+        -- { section = "header" },
+        {
+          section = "terminal",
+          -- We use 'printf' to handle the multi-line string and pipe it to lolcat
+          cmd = [[printf "
                                                                    
       ████ ██████           █████      ██                    
      ███████████             █████                            
@@ -42,19 +59,17 @@ return {
    █████████ ██████████ █████████ █████ █████ ████ █████  
  ███████████ ███    ███ █████████ █████ █████ ████ █████ 
 ██████  █████████████████████ ████ █████ █████ ████ ██████
-        ]],
-      },
-      -- example = "advanced",
-      sections = {
-        { section = "header" },
+" | lolcat --seed 12]],
+          height = 12, -- Adjust height to fit your ASCII art
+        },
         {
           pane = 2,
           section = "terminal",
-          -- cmd = "colorscript -e square",
-          cmd = "colorscript -r",
+          cmd = 'printf "\n\n\n" && colorscript -e square',
+          -- cmd = "colorscript -r",
           -- cmd = "ascii-image-converter ~/Pictures/MyImages/ERS.jpg -C -c -d 100,100",
-          height = 5,
-          padding = 6,
+          height = 8,
+          padding = 1,
         },
         { section = "keys", gap = 1, padding = 1 },
         {
