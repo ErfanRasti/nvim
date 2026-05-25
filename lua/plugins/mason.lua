@@ -6,6 +6,7 @@ return {
       "hyprls",
       "json-lsp jsonls",
       "lua-language-server lua_ls",
+      "lua-formatter",
       "markdown-toc",
       "markdownlint-cli2",
       "marksman",

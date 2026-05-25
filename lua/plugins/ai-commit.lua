@@ -1,7 +1,6 @@
 return {
   "vernette/ai-commit.nvim",
   dependencies = {
-    "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
     "ellisonleao/dotenv.nvim", -- make sure dotenv is loaded
   },

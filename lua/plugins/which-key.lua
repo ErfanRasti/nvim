@@ -18,9 +18,9 @@ return {
         remap = true,
         icon = "󰌌",
       },
-            {
+      {
         "<leader>at",
-        "<cmdCopilot toggle<cr>",
+        "<cmd>Copilot toggle<cr>",
         mode = "n",
         desc = "Toggle Copilot",
         remap = true,
