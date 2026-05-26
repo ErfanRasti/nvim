@@ -7,7 +7,6 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 vim.cmd("silent! Copilot disable")
-vim.cmd("silent! Persisted load")
 
 -- Disable autoformat for javascript and typescript
 vim.api.nvim_create_autocmd("FileType", {
