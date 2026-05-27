@@ -7,8 +7,10 @@ return {
       -- Full chat conversation buffer - use the larger model
       chat = {
         adapter = {
-          name = "ollama",
-          model = "gemma3:1b",
+          -- name = "ollama",
+          -- model = "gemma3:1b",
+          name = "opencode",
+          model = "OpenCode Zen/Nemotron 3 Super Free",
         },
       },
       -- Live coding inline assistance
