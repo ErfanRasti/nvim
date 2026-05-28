@@ -65,6 +65,13 @@ return {
 
     -- Register the CodeCompanion keymaps
     wk.add({
+      -- Group for CodeCompanion
+      {
+        "<leader>a",
+        group = "AI CodeCompanion",
+        desc = "CodeCompanion Commands",
+      },
+
       -- Ctrl+A for actions menu
       {
         "<leader>aa",
@@ -85,13 +92,6 @@ return {
         "<cmd>CodeCompanionChat Add<cr>",
         desc = "Add selection to CC chat",
         mode = "v",
-      },
-
-      -- Group for CodeCompanion
-      {
-        "<leader>a",
-        group = "AI CodeCompanion",
-        desc = "CodeCompanion Commands",
       },
 
       -- Open the inline interaction
