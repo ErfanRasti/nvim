@@ -11,6 +11,7 @@ sudo pacman -S neovim
 sudo pacman -S tree-sitter # for treesitter
 paru -S shell-color-scripts-git # for snacks dashboard
 sudo pacman -S ripgrep fd # for telescope
+sudo pacman -S ripgrep ast-grep # for grug-far
 sudo pacman -S shfmt stylua # fish support on neovim
 sudo pacman -S lua51 luarocks # lazy.nvim requirements
 sudo pacman -S lolcat # for fancy dashboard header on snacks
