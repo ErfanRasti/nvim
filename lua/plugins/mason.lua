@@ -20,7 +20,7 @@ return {
       "taplo",
       "tree-sitter-cli",
       "vtsls",
-      "harper-ls",
+      -- "harper-ls",
     },
   },
 }
