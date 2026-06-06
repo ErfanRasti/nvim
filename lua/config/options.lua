@@ -21,3 +21,7 @@ vim.g.lazyvim_python_ruff = "ruff"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
+
+-- Disable system clipboard sync
+-- Use "+y and "+p instead.
+-- vim.opt.clipboard = ""
